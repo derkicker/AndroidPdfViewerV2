@@ -32,14 +32,12 @@ android {
         minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
-        versionName "2.8.2"
+        versionName "2.8.3"
     }
 
+    namespace "com.github.barteksc.pdfviewer"
 }
 
 dependencies {
-    compile 'com.github.barteksc:pdfium-android:1.7.1'
+    implementation 'com.github.barteksc:pdfium-android:1.7.1'
 }
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
