@@ -32,11 +32,27 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 25
-        versionCode 2
-        versionName "2.8.4"
+        versionCode 3
+        versionName "2.8.5"
     }
 
     namespace "com.github.barteksc.pdfviewer"
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                artifact androidSourcesJar
+            }
+        }
+    }
 }
 
 dependencies {
